@@ -12,7 +12,7 @@ class Homepage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, '/add-horse'),
+              onPressed: () => Navigator.pushNamed(context, '/login'),
               child: const Text('Add a Horse (Staff)'),
             ),
             const SizedBox(height: 20),

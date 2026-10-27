@@ -4,6 +4,7 @@ import 'screens/home_page.dart';
 import 'screens/add_horse_page.dart';
 import 'screens/view_horses_page.dart';
 import 'firebase_options.dart';
+import 'screens/login_page.dart';
 
 void main() async {
   // Required to initialize Firebase before the app runs
@@ -29,6 +30,7 @@ class HorseCatalogueApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Homepage(),
+        '/login': (context) => const LoginScreen(),
         '/add-horse': (context) => const AddHorseScreen(),
         '/view-horses': (context) => const ViewHorsesScreen(),
       },
