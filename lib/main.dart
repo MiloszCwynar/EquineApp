@@ -31,7 +31,7 @@ class HorseCatalogueApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Homepage(),
-        //'/add-horse': (context) => const AddHorseScreen(),
+        '/add-horse': (context) => const AddHorseScreen(),
         //'/view-horses': (context) => const ViewHorsesScreen(),
       },
     );
