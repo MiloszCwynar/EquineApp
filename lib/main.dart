@@ -3,15 +3,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'screens/home_page.dart';
 import 'screens/add_horse_page.dart';
 import 'screens/view_horses_page.dart';
-// import 'firebase_options.dart'; // Uncomment after running 'flutterfire configure'
+import 'firebase_options.dart';
 
 void main() async {
   // Required to initialize Firebase before the app runs
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
 
   runApp(const HorseCatalogueApp());
 }
@@ -32,7 +30,7 @@ class HorseCatalogueApp extends StatelessWidget {
       routes: {
         '/': (context) => const Homepage(),
         '/add-horse': (context) => const AddHorseScreen(),
-        //'/view-horses': (context) => const ViewHorsesScreen(),
+        '/view-horses': (context) => const ViewHorsesScreen(),
       },
     );
   }
