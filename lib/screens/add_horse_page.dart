@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/horse.dart';
+import '../widgets/banner.dart';
 
 class AddHorseScreen extends StatefulWidget {
   const AddHorseScreen({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class _AddHorseScreenState extends State<AddHorseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Add a Horse')),
+      appBar: const AppBanner(title: 'Add A Horse'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

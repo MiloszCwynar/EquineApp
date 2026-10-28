@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/banner.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Horse Catalogue')),
+      appBar: const AppBanner(title: 'Homepage'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
