@@ -54,6 +54,15 @@ class AppBanner extends StatelessWidget implements PreferredSizeWidget {
             }
           },
         ),
+        IconButton(
+          icon: const Icon(Icons.person),
+          tooltip: 'Sign Up',
+          onPressed: () {
+            if (currentRoute != '/signup') {
+              Navigator.pushReplacementNamed(context, '/signup');
+            }
+          },
+        ),
         const SizedBox(width: 8),
       ],
     );

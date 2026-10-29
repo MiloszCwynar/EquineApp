@@ -13,7 +13,6 @@ class AddHorseScreen extends StatefulWidget {
 class _AddHorseScreenState extends State<AddHorseScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  // Controllers to grab the text from the fields
   final _sellerController = TextEditingController();
   final _nameController = TextEditingController();
   final _breedController = TextEditingController();
@@ -22,7 +21,7 @@ class _AddHorseScreenState extends State<AddHorseScreen> {
 
   Future<void> _saveHorse() async {
     if (_formKey.currentState!.validate()) {
-      // 1. Create the Horse object
+      //Create the Horse object
       final newHorse = Horse(
         sellerName: _sellerController.text,
         name: _nameController.text,
@@ -30,17 +29,13 @@ class _AddHorseScreenState extends State<AddHorseScreen> {
         height: _heightController.text,
         description: _descController.text,
       );
-
-      // 2. Save to Firestore (ideally moved to a Repository class later)
       await FirebaseFirestore.instance
           .collection('horses')
           .add(newHorse.toFirestore());
-
-      // 3. Clear the form and show a success message
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Horse added to catalogue!')),
       );
-      Navigator.pop(context); // Go back to homepage
+      Navigator.pop(context);
     }
   }
 

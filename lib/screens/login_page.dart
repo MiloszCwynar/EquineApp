@@ -27,14 +27,12 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      // Attempt to log in with Firebase
       await _auth.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
 
       if (!mounted) return;
-      // On success, go to the Add Horse screen and remove Login from the backstack
       Navigator.pushReplacementNamed(context, '/add-horse');
 
     } on FirebaseAuthException catch (e) {
